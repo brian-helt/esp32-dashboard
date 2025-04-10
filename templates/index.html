@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Brian Tries Things</title>
+  <meta charset="utf-8">
+  <script>
+    function updateValue() {
+      fetch("/api/latest")
+        .then(res => res.json())
+        .then(data => {
+          document.getElementById("sensor-value").textContent = data.value ?? "N/A";
+        });
+    }
+
+    setInterval(updateValue, 2000);
+    window.onload = updateValue;
+  </script>
+</head>
+<body>
+  <h1>Getting data from esp32</h1>
+  <p>Current Value: <strong id="sensor-value">Loading...</strong></p>
+</body>
+</html>
