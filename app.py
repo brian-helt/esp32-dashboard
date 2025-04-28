@@ -34,6 +34,10 @@ def classify_lux_value(lux):
 def index():
     return render_template("index.html", value=latest_value["value"])
 
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
 @app.route("/api/sensor-data", methods=["POST"])
 def sensor_data():
     data = request.get_json()
