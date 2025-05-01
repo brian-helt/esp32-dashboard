@@ -6,6 +6,7 @@
     </head>
 
     <body>
+        <a href="{{ url_for('index') }}">Home</a>
         <h1>About My Project</h1>
         <p>My name is Brian Helt.</p>
         <p>I started this project to learn about Microcontrollers, C++, and Web Development. Hopefully I can learn electrical schematic design, PCB design, and component sourcing along the way!</p>
@@ -19,10 +20,10 @@
             that has various sensors connected to it. The initial sensors are an ambient light sensor, a moisture sensor, and a temperature/humidity sensor. This ESP32 can gather all the data from those sensors and send it to the 'primary' ESP32 using something called ESP-NOW, 
             which is a communication system specific to ESP32 devices.
         </p>
+
+        <h2>Prototype Diagram</h2>
+        <img src="{{ url_for('static', filename='images/esp_prototype_drawing.png')}}" alt="Prototype Diagram"/>
     
 
     </body>
-
-
-
 </html>
