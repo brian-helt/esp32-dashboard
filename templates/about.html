@@ -9,16 +9,15 @@
         <a href="{{ url_for('index') }}">Home</a>
         <h1>About My Project</h1>
         <p>My name is Brian Helt.</p>
-        <p>I started this project to learn about Microcontrollers, C++, and Web Development. Hopefully I can learn electrical schematic design, PCB design, and component sourcing along the way!</p>
-        <p>My patio gets very little sunlight, which makes it difficult for me to learn how to grow plants and start a garden. So I thought 'what if I get a sesnor that measure the amount of light my plants are getting?
-            There are a few types of plant monitoring devices that you can but that all have fancy apps, but I figured why can't I make one myself? Sure, I don't have all the knowledge needed to do that, but that is what makes it fun.
-
-        </p>
+        <p>I started this project to learn more about Microcontrollers, C++, and Web Development. As the project goes one, I'll be able to learn more about PCB schematic and layout design.</p>
+        <p>My patio gets very little sunlight, which makes it difficult for me to learn how to grow plants and start a garden. So I thought 'what if I get a sesnor that measures the amount of light my plants are getting?
+            There are a few types of plant monitoring devices that you can but that all have fancy apps, but I figured why can't I make one myself?</p>
 
         <h2>Prototype Stage</h2>
-        <p>The 'prototpye' stage of this project, <em>currently unnamed</em>, mkaes use of ESP32 devices. They are similar to Arduinos, but more powerful and have WiFi built in. The idea is tyhat I can have one ESP32 (or more, for gathering data from multiple plants)
-            that has various sensors connected to it. The initial sensors are an ambient light sensor, a moisture sensor, and a temperature/humidity sensor. This ESP32 can gather all the data from those sensors and send it to the 'primary' ESP32 using something called ESP-NOW, 
-            which is a communication system specific to ESP32 devices.
+        <p>The 'prototpye' stage of this project, <em>currently unnamed</em>, makes use of ESP32 devices. They are similar to Arduinos, but more powerful and have WiFi built in. The idea is that I can have one ESP32 (or more, for gathering data from multiple plants)
+            that has various sensors connected to it. The initial sensors I chose are an ambient light sensor, a moisture sensor, and a temperature/humidity sensor, currently all sourced from <a href="https://www.dfrobot.com/" target="_blank" rel="noopener">DFRobot.com</a>. 
+            These 'secondary' ESP32's can gather all the data from those sensors and send it to the 'primary' ESP32 using something called ESP-NOW, which is a communication system specific to ESP32 devices. The 'primary' ESP32 is connected to the internet over WiFi, 
+            and sends the data to my web server hosted on <a href="https://render.com/" target="_blank" rel="noopener">Render.com</a>. Hosting via Render gives me a secure public web server, that lets me see live data from my device from anywhere.
         </p>
 
         <h2>Prototype Diagram</h2>
