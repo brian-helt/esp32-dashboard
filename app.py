@@ -41,19 +41,25 @@ def about():
 @app.route("/api/sensor-data", methods=["POST"])
 def sensor_data():
     data = request.get_json()
+    updated = False
+    
     if "lux" in data:
         latest_value["lux"] = data["lux"]
         print(f"Received Lux: {data['lux']}")
-        return '', 204
+        updated = True
+        
     if "temperature" in data:
         latest_value['temperature'] = data["temperature"]
         print(f"Received Temperature: {data['temperature']}")
-        return '', 204
+        updated = True
+        
     if "humidity" in data:
         latest_value['humidity'] = data["humidity"]
-        print(f"Received Humiduty: {data['humidity']}")
-        return '', 204    
+        print(f"Received Humidity: {data['humidity']}")
+        updated = True
     
+    if updated:
+        return '', 204
     return 'Bad request', 400
 
 @app.route("/api/latest", methods=["GET"])
