@@ -29,6 +29,10 @@ def classify_lux_value(lux):
         return "Very Bright Direct Sunlight"
         
 
+def celsius_to_fahrenheit(celsius):
+    if celsius is None:
+        return None
+    return (celsius * 9/5) + 32
 
 @app.route("/")
 def index():
@@ -67,7 +71,8 @@ def get_latest():
     response = {
         "lux" : latest_value["lux"],
         "classification" : classify_lux_value(latest_value["lux"]),
-        "temperature" : latest_value['temperature'],
+        "temperature_c" : latest_value['temperature'],
+        "temperature_f" : celsius_to_fahrenheit(latest_value['temperature']),
         "humidity" : latest_value['humidity']
     }
     return jsonify(response)

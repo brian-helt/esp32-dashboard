@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Brian Tries Things</title>
+  <title>LeafPanel</title>
   <meta charset="utf-8">
   <script>
     function updateValue() {
@@ -10,7 +10,8 @@
         .then(data => {
           document.getElementById("lux-value").textContent = data.lux ?? "N/A";
           document.getElementById("light-classification").textContent = data.classification ?? "N/A";
-          document.getElementById("temperature-value").textContent = data.temperature ?? "N/A";
+          document.getElementById("temperature-c-value").textContent = data.temperature_c ?? "N/A";
+          document.getElementById("temperature-f-value").textContent = data.temperature_f ?? "N/A";
           document.getElementById("humidity-value").textContent = data.humidity ?? "N/A";
         });
     }
@@ -21,16 +22,16 @@
 </head>
 <body>
   <a href="{{ url_for('about') }}">About</a>
-  <h1>Brian Tries Things</h1>
-  <h2>
-    <a href="https://www.dfrobot.com/product-2183.html">
-      Getting Light Data From SEN0390
-    </a>
-  </h2>
+  <h1>LeafPanel Prototype Dashboard</h1>
+  <h2>Sensor Links</h2>
+  <p>Light/Lux Sensor: <a href="https://www.dfrobot.com/product-2183.html">SEN0390</a></p>
+  <p>Temperature and Humidity Sensor: <a href="https://www.dfrobot.com/product-174.html">DFR0067</a></p>
+  <p>Moisture Sensor (Not connected currently): <a href="https://www.dfrobot.com/product-2054.html">SEN0308</a></p>
 
+  <h2>Live Data</h2>
   <p>Current Lux Value: <strong id="lux-value">Loading...</strong></p>
   <p>Light Level Classification: <strong id="light-classification">Loading...</strong></p>
-  <p>Current Temperature (Celcius): <strong id="temperature-value">Loading...</strong> °C</p>
+  <p>Current Temperature: <strong id="temperature-c-value">Loading...</strong> °C / <strong id="temperature-f-value">Loading...</strong> °F</p>
   <p>Current Humidity: <strong id="humidity-value">Loading...</strong>%</p>
 </body>
 </html>
