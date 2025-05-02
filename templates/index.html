@@ -8,8 +8,10 @@
       fetch("/api/latest")
         .then(res => res.json())
         .then(data => {
-          document.getElementById("sensor-value").textContent = data.value ?? "N/A";
+          document.getElementById("lux-value").textContent = data.lux ?? "N/A";
           document.getElementById("light-classification").textContent = data.classification ?? "N/A";
+          document.getElementById("temperature-value").textContent = data.temperature ?? "N/A";
+          document.getElementById("humidity-value").textContent = data.humidity ?? "N/A";
         });
     }
 
@@ -26,7 +28,9 @@
     </a>
   </h2>
 
-  <p>Current Lux Value: <strong id="sensor-value">Loading...</strong></p>
+  <p>Current Lux Value: <strong id="lux-value">Loading...</strong></p>
   <p>Light Level Classification: <strong id =light-classification> Loading...</strong></p>
+  <p>Current Temperature (Celcius): <strong id="temperature-value">Loading...</strong></p>
+  <p>Current Humidity: <strong id="humidity-value">Loading...</strong></p>
 </body>
 </html>
