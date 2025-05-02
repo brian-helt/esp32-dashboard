@@ -32,7 +32,8 @@ def classify_lux_value(lux):
 def celsius_to_fahrenheit(celsius):
     if celsius is None:
         return None
-    return (celsius * 9/5) + 32
+    f_value = f'{((celsius * 9/5) + 32):.2f}'
+    return f_value
 
 @app.route("/")
 def index():
